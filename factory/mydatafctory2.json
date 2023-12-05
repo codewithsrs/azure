@@ -1,0 +1,9 @@
+{
+	"name": "mydatafctory2",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "17fbaaf7-54fe-4007-b0f3-74c3e7d927c9",
+		"tenantId": "6129fed2-b9d2-4bb8-b3b8-3271ddef4186"
+	}
+}
