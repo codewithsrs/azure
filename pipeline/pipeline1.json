@@ -1,5 +1,5 @@
 {
-	"name": "CopyFromOnPrem",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -19,7 +19,10 @@
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference",
 						"parameters": {
-							"dir": "/"
+							"dir": {
+								"value": "@concat(pipeline().parameters.dir1,'/')",
+								"type": "Expression"
+							}
 						}
 					},
 					"fieldList": [
@@ -60,13 +63,13 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "pipeline1",
+									"referenceName": "pipeline2",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"dir1": {
-										"value": "@item().name",
+									"dir2": {
+										"value": "@concat(pipeline().parameters.dir1,'/',item().name,'/')",
 										"type": "Expression"
 									}
 								}
@@ -76,8 +79,11 @@
 				}
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2023-11-12T20:15:39Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"parameters": {
+			"dir1": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
 }
