@@ -422,7 +422,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/get the file names')]",
+			"name": "[concat(parameters('factoryName'), '/Get the filename')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -515,7 +515,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/get metadata from subfolder')]",
+			"name": "[concat(parameters('factoryName'), '/Get the next subfolders')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -582,7 +582,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "get the file names",
+											"referenceName": "Get the filename",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -610,11 +610,11 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/pipelines/get the file names')]"
+				"[concat(variables('factoryId'), '/pipelines/Get the filename')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Get metadat from parent folder')]",
+			"name": "[concat(parameters('factoryName'), '/Get the subfolders')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -678,7 +678,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "get metadata from subfolder",
+											"referenceName": "Get the next subfolders",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -701,7 +701,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/pipelines/get metadata from subfolder')]"
+				"[concat(variables('factoryId'), '/pipelines/Get the next subfolders')]"
 			]
 		}
 	]
